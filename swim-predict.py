@@ -1,4 +1,5 @@
 # This is an AI used for predicting times based on user input
+
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
@@ -82,6 +83,7 @@ def main():
                 break
         except:
             print("Please enter a valid integer")
+
 # Build a dictionary matching the exact columns created by get_dummies
     sample_dict = {
         "distance": [user_distance],
