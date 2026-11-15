@@ -8,9 +8,9 @@ import numpy as np
 def main():
 
     data = {
-        "strokes": ["free", "free", "free", "free", "back", "back", "breast", "breast", "fly", "fly", "fly", "IM", "IM"], # 1 = free, 2 = back, 3 = breast, 4 = fly, 5= IM
-        "distance": [50, 100, 200, 500, 50, 100, 50, 100, 50, 100, 200, 100, 200], # Distance is in yards
-        "times": [21.71, 47.49, 103.30, 293.53, 29.84, 64.23, 33.22, 69.52, 24.22, 51.07, 112.35, 64.13, 118.91] # Times are all in seconds
+        "strokes": ["free", "free", "free", "free", "back", "back", "breast", "breast", "breast", "fly", "fly", "fly", "IM", "IM"], # 1 = free, 2 = back, 3 = breast, 4 = fly, 5= IM
+        "distance": [50, 100, 200, 500, 50, 100, 50, 100, 200, 50, 100, 200, 100, 200], # Distance is in yards
+        "times": [21.71, 47.49, 103.30, 293.53, 29.84, 64.23, 33.22, 69.52, 205.53, 24.22, 51.07, 112.35, 64.13, 118.91] # Times are all in seconds
     }
 
     # Store it into a dataframe (table with rows and columns to store information)
@@ -101,7 +101,7 @@ def main():
     # Predict the time
     sample_time = model.predict(sample_scaled)
     print(f"Your predicted time for {user_distance} {selected_stroke} is {sample_time[0][0]:,.2f} seconds.")
-    print("Note: If you chose events that you haven't swum or your weak strokes, the predicted time will be VERY inaccurate!")
+    print("Note: If you chose events that you haven't swum, the predicted time will be VERY inaccurate!")
 
 if __name__ == "__main__":
     main()
